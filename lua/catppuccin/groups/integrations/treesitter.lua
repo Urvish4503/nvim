@@ -30,10 +30,10 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@string"] = { fg = C.b_green }, -- For strings.
 		["@string.documentation"] = { fg = C.teal, style = { "italic" } }, -- For strings documenting code (e.g. Python docstrings).
 		["@string.regexp"] = { fg = C.peach, style = O.styles.strings or {} }, -- For regexes.
-		["@string.escape"] = { fg = C.pink, style = O.styles.strings or {} }, -- For escape characters within a string.
+		["@string.escape"] = { fg = C.b_pink, style = O.styles.strings or {} }, -- For escape characters within a string.
 		["@string.special"] = { link = "Special" }, -- other special strings (e.g. dates)
 		["@string.special.path"] = { link = "Special" }, -- filenames
-		["@string.special.symbol"] = { fg = C.flamingo }, -- symbols or atoms
+		["@string.special.symbol"] = { fg = C.b_purple }, -- symbols or atoms
 		["@string.special.url"] = { fg = C.b_green, style = { "italic", "underline" } }, -- urls, links and emails
 
 		["@character"] = { link = "Character" }, -- character literals
