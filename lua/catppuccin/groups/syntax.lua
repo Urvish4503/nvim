@@ -4,13 +4,13 @@ function M.get()
 	return {
 		Comment = { fg = C.overlay2, style = { "italic" } }, -- just comments
 		SpecialComment = { link = "Special" }, -- special things inside a comment
-		Constant = { fg = C.peach }, -- (preferred) any constant
+		Constant = { fg = C.white }, -- (preferred) any constant
 		String = { fg = C.b_green, style = O.styles.strings or {} }, -- a string constant: "this is a string"
 		Character = { fg = C.b_green }, --  a character constant: 'c', '\n'
 		Number = { fg = C.white, style = O.styles.numbers or {} }, --   a number constant: 234, 0xff
 		Float = { link = "Number" }, --    a floating point constant: 2.3e10
 		Boolean = { fg = C.b_pink, style = O.styles.booleans or {} }, --  a boolean constant: TRUE, false
-		Identifier = { fg = C.b_pink, style = O.styles.variables or {} }, -- (preferred) any variable name
+		Identifier = { fg = C.white, style = O.styles.variables or {} }, -- (preferred) any variable name
 		Function = { fg = C.b_purple, style = O.styles.functions or {} }, -- function name (also: methods for classes)
 		Statement = { fg = C.b_purple }, -- (preferred) any statement
 		Conditional = { fg = C.b_pink, style = O.styles.conditionals or {} }, --  if, then, else, endif, switch, etc.
@@ -26,7 +26,7 @@ function M.get()
 		Macro = { fg = C.b_pink }, -- same as Define
 		PreCondit = { link = "PreProc" }, -- preprocessor #if, #else, #endif, etc.
 
-		StorageClass = { fg = C.yellow }, -- static, register, volatile, etc.
+		StorageClass = { fg = C.b_yellow }, -- static, register, volatile, etc.
 		Structure = { fg = C.b_pink }, --  struct, union, enum, etc.
 		Special = { fg = C.white }, -- (preferred) any special symbol
 		Type = { fg = C.b_pink, style = O.styles.types or {} }, -- (preferred) int, long, char, etc.

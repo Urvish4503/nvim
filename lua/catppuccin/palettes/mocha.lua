@@ -28,7 +28,7 @@ return {
 	black = "#000000",
 	white = "#ffffff",
 	b_blue = "#52a8ff",
-	b_green = "#0c9784", -- #58ac67
+	b_green = "#58ac67", --
 	b_purple = "#bf7af0",
 	b_pink = "#f75f8f",
 	b_yellow = "#cd9731",
