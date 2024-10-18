@@ -6,7 +6,7 @@ local M = {
 	default_options = {
 		flavour = "auto",
 		background = {
-			light = "latte",
+			light = "mocha",
 			dark = "mocha",
 		},
 		compile_path = vim.fn.stdpath "cache" .. "/catppuccin",
@@ -24,7 +24,7 @@ local M = {
 		no_underline = false,
 		styles = {
 			comments = { "italic" },
-			conditionals = { "italic" },
+			conditionals = {},
 			loops = {},
 			functions = {},
 			keywords = {},

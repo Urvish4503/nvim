@@ -2,38 +2,38 @@ local M = {}
 
 function M.get()
 	return {
-		Comment = { fg = C.overlay2, style = O.styles.comments }, -- just comments
+		Comment = { fg = C.overlay2, style = { "italic" } }, -- just comments
 		SpecialComment = { link = "Special" }, -- special things inside a comment
 		Constant = { fg = C.peach }, -- (preferred) any constant
-		String = { fg = C.green, style = O.styles.strings or {} }, -- a string constant: "this is a string"
-		Character = { fg = C.teal }, --  a character constant: 'c', '\n'
-		Number = { fg = C.peach, style = O.styles.numbers or {} }, --   a number constant: 234, 0xff
+		String = { fg = C.b_green, style = O.styles.strings or {} }, -- a string constant: "this is a string"
+		Character = { fg = C.b_green }, --  a character constant: 'c', '\n'
+		Number = { fg = C.white, style = O.styles.numbers or {} }, --   a number constant: 234, 0xff
 		Float = { link = "Number" }, --    a floating point constant: 2.3e10
-		Boolean = { fg = C.peach, style = O.styles.booleans or {} }, --  a boolean constant: TRUE, false
-		Identifier = { fg = C.flamingo, style = O.styles.variables or {} }, -- (preferred) any variable name
-		Function = { fg = C.blue, style = O.styles.functions or {} }, -- function name (also: methods for classes)
-		Statement = { fg = C.mauve }, -- (preferred) any statement
-		Conditional = { fg = C.mauve, style = O.styles.conditionals or {} }, --  if, then, else, endif, switch, etc.
-		Repeat = { fg = C.mauve, style = O.styles.loops or {} }, --   for, do, while, etc.
-		Label = { fg = C.sapphire }, --    case, default, etc.
-		Operator = { fg = C.sky, style = O.styles.operators or {} }, -- "sizeof", "+", "*", etc.
-		Keyword = { fg = C.mauve, style = O.styles.keywords or {} }, --  any other keyword
-		Exception = { fg = C.mauve, style = O.styles.keywords or {} }, --  try, catch, throw
+		Boolean = { fg = C.b_pink, style = O.styles.booleans or {} }, --  a boolean constant: TRUE, false
+		Identifier = { fg = C.b_pink, style = O.styles.variables or {} }, -- (preferred) any variable name
+		Function = { fg = C.b_purple, style = O.styles.functions or {} }, -- function name (also: methods for classes)
+		Statement = { fg = C.b_purple }, -- (preferred) any statement
+		Conditional = { fg = C.b_pink, style = O.styles.conditionals or {} }, --  if, then, else, endif, switch, etc.
+		Repeat = { fg = C.b_pink, style = O.styles.loops or {} }, --   for, do, while, etc.
+		Label = { fg = C.b_pink }, --    case, default, etc.
+		Operator = { fg = C.b_blue, style = O.styles.operators or {} }, -- "sizeof", "+", "*", etc.
+		Keyword = { fg = C.b_pink, style = O.styles.keywords or {} }, --  any other keyword
+		Exception = { fg = C.b_pink, style = O.styles.keywords or {} }, --  try, catch, throw
 
-		PreProc = { fg = C.pink }, -- (preferred) generic Preprocessor
-		Include = { fg = C.mauve, style = O.styles.keywords or {} }, --  preprocessor #include
+		PreProc = { fg = C.b_pink }, -- (preferred) generic Preprocessor
+		Include = { fg = C.b_pink, style = O.styles.keywords or {} }, --  preprocessor #include
 		Define = { link = "PreProc" }, -- preprocessor #define
-		Macro = { fg = C.mauve }, -- same as Define
+		Macro = { fg = C.b_pink }, -- same as Define
 		PreCondit = { link = "PreProc" }, -- preprocessor #if, #else, #endif, etc.
 
 		StorageClass = { fg = C.yellow }, -- static, register, volatile, etc.
-		Structure = { fg = C.yellow }, --  struct, union, enum, etc.
-		Special = { fg = C.pink }, -- (preferred) any special symbol
-		Type = { fg = C.yellow, style = O.styles.types or {} }, -- (preferred) int, long, char, etc.
+		Structure = { fg = C.b_pink }, --  struct, union, enum, etc.
+		Special = { fg = C.white }, -- (preferred) any special symbol
+		Type = { fg = C.b_pink, style = O.styles.types or {} }, -- (preferred) int, long, char, etc.
 		Typedef = { link = "Type" }, --  A typedef
 		SpecialChar = { link = "Special" }, -- special character in a constant
 		Tag = { fg = C.lavender, style = { "bold" } }, -- you can use CTRL-] on this
-		Delimiter = { fg = C.overlay2 }, -- character that needs attention
+		Delimiter = { fg = C.white }, -- character that needs attention
 		Debug = { link = "Special" }, -- debugging statements
 
 		Underlined = { style = { "underline" } }, -- (preferred) text that stands out, HTML links
@@ -42,12 +42,12 @@ function M.get()
 		-- ("Ignore", below, may be invisible...)
 		-- Ignore = { }, -- (preferred) left blank, hidden  |hl-Ignore|
 
-		Error = { fg = C.red }, -- (preferred) any erroneous construct
+		Error = { fg = C.b_red }, -- (preferred) any erroneous construct
 		Todo = { bg = C.flamingo, fg = C.base, style = { "bold" } }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
-		qfLineNr = { fg = C.yellow },
-		qfFileName = { fg = C.blue },
-		htmlH1 = { fg = C.pink, style = { "bold" } },
-		htmlH2 = { fg = C.blue, style = { "bold" } },
+		qfLineNr = { fg = C.b_yellow },
+		qfFileName = { fg = C.b_blue },
+		htmlH1 = { fg = C.b_pink, style = { "bold" } },
+		htmlH2 = { fg = C.b_blue, style = { "bold" } },
 		-- mkdHeading = { fg = C.peach, style = { "bold" } },
 		-- mkdCode = { bg = C.terminal_black, fg = C.text },
 		mkdCodeDelimiter = { bg = C.base, fg = C.text },

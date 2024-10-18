@@ -14,27 +14,27 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 
 	local colors = { -- Reference: https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md
 		-- Identifiers
-		["@variable"] = { fg = C.text, style = O.styles.variables or {} }, -- Any variable name that does not have another highlight.
-		["@variable.builtin"] = { fg = C.red, style = O.styles.properties or {} }, -- Variable names that are defined by the languages, like this or self.
-		["@variable.parameter"] = { fg = C.maroon, style = O.styles.variables or {} }, -- For parameters of a function.
-		["@variable.member"] = { fg = C.lavender }, -- For fields.
+		["@variable"] = { fg = C.white, style = O.styles.variables or {} }, -- Any variable name that does not have another highlight.
+		["@variable.builtin"] = { fg = C.b_blue, style = O.styles.properties or {} }, -- Variable names that are defined by the languages, like this or self.
+		["@variable.parameter"] = { fg = C.white, style = O.styles.variables or {} }, -- For parameters of a function.
+		["@variable.member"] = { fg = C.white }, -- For fields.
 
 		["@constant"] = { link = "Constant" }, -- For constants
 		["@constant.builtin"] = { fg = C.peach, style = O.styles.keywords or {} }, -- For constant that are built in the language: nil in Lua.
-		["@constant.macro"] = { link = "Macro" }, -- For constants that are defined by macros: NULL in C.
+		["@constant.macro"] = { fg = C.b_blue }, -- For constants that are defined by macros: NULL in C.
 
-		["@module"] = { fg = C.lavender, style = O.styles.miscs or { "italic" } }, -- For identifiers referring to modules and namespaces.
-		["@label"] = { link = "Label" }, -- For labels: label: in C and :label: in Lua.
+		["@module"] = { fg = C.white, style = O.styles.miscs or { "italic" } }, -- For identifiers referring to modules and namespaces.
+		["@label"] = { fg = C.b_pink }, -- For labels: label: in C and :label: in Lua.
 
 		-- Literals
-		["@string"] = { link = "String" }, -- For strings.
-		["@string.documentation"] = { fg = C.teal, style = O.styles.strings or {} }, -- For strings documenting code (e.g. Python docstrings).
+		["@string"] = { fg = C.b_green }, -- For strings.
+		["@string.documentation"] = { fg = C.teal, style = { "italic" } }, -- For strings documenting code (e.g. Python docstrings).
 		["@string.regexp"] = { fg = C.peach, style = O.styles.strings or {} }, -- For regexes.
 		["@string.escape"] = { fg = C.pink, style = O.styles.strings or {} }, -- For escape characters within a string.
 		["@string.special"] = { link = "Special" }, -- other special strings (e.g. dates)
 		["@string.special.path"] = { link = "Special" }, -- filenames
 		["@string.special.symbol"] = { fg = C.flamingo }, -- symbols or atoms
-		["@string.special.url"] = { fg = C.rosewater, style = { "italic", "underline" } }, -- urls, links and emails
+		["@string.special.url"] = { fg = C.b_green, style = { "italic", "underline" } }, -- urls, links and emails
 
 		["@character"] = { link = "Character" }, -- character literals
 		["@character.special"] = { link = "SpecialChar" }, -- special characters (e.g. wildcards)
@@ -45,7 +45,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 
 		-- Types
 		["@type"] = { link = "Type" }, -- For types.
-		["@type.builtin"] = { fg = C.yellow, style = O.styles.properties or { "italic" } }, -- For builtin types.
+		["@type.builtin"] = { fg = C.b_pink, style = O.styles.properties or { "italic" } }, -- For builtin types.
 		["@type.definition"] = { link = "Type" }, -- type definitions (e.g. `typedef` in C)
 
 		["@attribute"] = { link = "Constant" }, -- attribute annotations (e.g. Python decorators)
@@ -68,11 +68,11 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@keyword.modifier"] = { link = "Keyword" }, -- For keywords modifying other constructs (e.g. `const`, `static`, `public`)
 		["@keyword.type"] = { link = "Keyword" }, -- For keywords describing composite types (e.g. `struct`, `enum`)
 		["@keyword.coroutine"] = { link = "Keyword" }, -- For keywords related to coroutines (e.g. `go` in Go, `async/await` in Python)
-		["@keyword.function"] = { fg = C.mauve, style = O.styles.keywords or {} }, -- For keywords used to define a function.
+		["@keyword.function"] = { fg = C.b_purple, style = O.styles.keywords or {} }, -- For keywords used to define a function.
 		["@keyword.operator"] = { link = "Operator" }, -- For new keyword operator
 		["@keyword.import"] = { link = "Include" }, -- For includes: #include in C, use or extern crate in Rust, or require in Lua.
 		["@keyword.repeat"] = { link = "Repeat" }, -- For keywords related to loops.
-		["@keyword.return"] = { fg = C.mauve, style = O.styles.keywords or {} },
+		["@keyword.return"] = { fg = C.b_pink, style = O.styles.keywords or {} },
 		["@keyword.debug"] = { link = "Exception" }, -- For keywords related to debugging
 		["@keyword.exception"] = { link = "Exception" }, -- For exception related keywords.
 
@@ -82,7 +82,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@keyword.directive"] = { link = "PreProc" }, -- various preprocessor directives & shebangs
 		["@keyword.directive.define"] = { link = "Define" }, -- preprocessor definition directives
 		-- JS & derivative
-		["@keyword.export"] = { fg = C.sky, style = O.styles.keywords },
+		["@keyword.export"] = { fg = C.b_pink, style = O.styles.keywords },
 
 		-- Punctuation
 		["@punctuation.delimiter"] = { link = "Delimiter" }, -- For delimiters (e.g. `;` / `.` / `,`).
@@ -93,9 +93,9 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@comment"] = { link = "Comment" },
 		["@comment.documentation"] = { link = "Comment" }, -- For comments documenting code
 
-		["@comment.error"] = { fg = C.base, bg = C.red },
-		["@comment.warning"] = { fg = C.base, bg = C.yellow },
-		["@comment.hint"] = { fg = C.base, bg = C.blue },
+		["@comment.error"] = { fg = C.base, bg = C.b_red },
+		["@comment.warning"] = { fg = C.base, bg = C.b_yellow },
+		["@comment.hint"] = { fg = C.base, bg = C.b_blue },
 		["@comment.todo"] = { fg = C.base, bg = C.flamingo },
 		["@comment.note"] = { fg = C.base, bg = C.rosewater },
 
@@ -188,9 +188,9 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@function.method.call.php"] = { link = "Function" },
 
 		-- C/CPP
-		["@type.builtin.c"] = { fg = C.yellow, style = {} },
-		["@property.cpp"] = { fg = C.text },
-		["@type.builtin.cpp"] = { fg = C.yellow, style = {} },
+		["@type.builtin.c"] = { fg = C.b_pink, style = {} },
+		["@property.cpp"] = { fg = C.b_purple },
+		["@type.builtin.cpp"] = { fg = C.b_pink, style = {} },
 
 		-- gitcommit
 		["@comment.warning.gitcommit"] = { fg = C.yellow },
